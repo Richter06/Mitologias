@@ -1,0 +1,225 @@
+.caos,
+.primordiais,
+.titas,
+.queda-urano,
+.filhos-cronos,
+.profecia,
+.titanomaquia,
+.ordem,
+.humanidade,
+.interferencia,
+.pandora,
+.evolucao,
+.surgimento,
+.aventuras,
+.monstros,
+.conquistas,
+.conflitos {
+    display: none;
+    /* tudo começa escondido */
+}
+
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold-1: #b88a2d;
+    --gold-2: #d8b45a;
+    --gold-3: #f2df9b;
+    --gold-4: #8f6a1f;
+    --white-1: #ffffff;
+    --white-2: #fbfbfb;
+    --white-3: #f4f4f4;
+    --text: #2f2f2f;
+    --line: rgba(184, 138, 45, 0.35);
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--text);
+    line-height: 1.75;
+    padding: 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #fcfcfc 100%);
+    min-height: 100vh;
+}
+
+/* blocos principais */
+header,
+section {
+    max-width: 1000px;
+    margin: 0 auto 28px auto;
+    background: linear-gradient(180deg, var(--white-1), var(--white-2));
+    border: 1px solid rgba(184, 138, 45, 0.18);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before,
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(115deg,
+            transparent 0%,
+            rgba(184, 138, 45, 0.03) 20%,
+            transparent 40%,
+            rgba(184, 138, 45, 0.03) 60%,
+            transparent 80%);
+}
+
+header {
+    padding: 34px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    color: var(--gold-4);
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+header h1::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    margin: 14px auto 0;
+    background: linear-gradient(90deg, transparent, var(--gold-2), transparent);
+}
+
+header p {
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    text-align: justify;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+main > h2 {
+    color: var(--gold-4);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin: 10px 0 22px;
+    padding-left: 16px;
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, var(--gold-2), var(--gold-4)) 1;
+}
+
+section {
+    padding: 26px;
+}
+
+section h3 {
+    color: var(--gold-4);
+    font-size: 1.55rem;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(184, 138, 45, 0.25);
+}
+
+section div {
+    margin: 16px 0;
+    padding: 20px 22px;
+    background: #ffffff;
+    border-left: 5px solid;
+    border-image: linear-gradient(180deg, var(--gold-2), var(--gold-4)) 1;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+section div h4 {
+    font-size: 1.22rem;
+    color: var(--gold-4);
+    margin-bottom: 10px;
+}
+
+section div p {
+    color: #3f3f3f;
+    text-align: justify;
+}
+
+/* botão minimalista com seta de linhas */
+.continuar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0 18px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--gold-4);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.continuar::before {
+    content: "";
+    width: 28px;
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--gold-2), var(--gold-4));
+    display: inline-block;
+    transform: translateY(0.5px);
+}
+
+.continuar::after {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-top: 1.5px solid var(--gold-4);
+    border-right: 1.5px solid var(--gold-4);
+    transform: rotate(45deg);
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.continuar:hover {
+    transform: translateX(2px);
+    opacity: 0.95;
+}
+
+.continuar:active {
+    transform: translateX(0);
+}
+
+.continuar:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* escondido */
+.escondido {
+    display: none;
+}
+
+/* responsivo */
+@media (max-width: 700px) {
+    body {
+        padding: 14px;
+    }
+
+    header,
+    section {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    section div {
+        padding: 16px;
+    }
+}
