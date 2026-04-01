@@ -1,6 +1,6 @@
 const botoes = [...document.querySelectorAll(".continuar")];
 
-// Desabilita todos menos o primeiro botão
+// abre só primeiro botão
 botoes.forEach((btn, i) => {
     if (i !== 0) btn.disabled = true;
 });
@@ -9,22 +9,35 @@ botoes.forEach((botao, indice) => {
     botao.addEventListener("click", () => {
         const texto = botao.nextElementSibling;
 
-        // mostra texto escondido
-        if (texto.style.display !== "block") {
-            texto.style.display = "block";
+        const visivel = window.getComputedStyle(texto).display !== "none";
+
+        if (!visivel) {
+            // mostra
+            if (texto.classList.contains("tabuletas")) {
+                texto.style.display = "flex";
+            } else {
+                texto.style.display = "block";
+            }
+
             botao.textContent = "Ocultar";
 
-            // libera proximo
-            if (botoes[indice + 1]) botoes[indice + 1].disabled = false;
+            // libera próximo
+            if (botoes[indice + 1]) {
+                botoes[indice + 1].disabled = false;
+            }
 
-        } else { // esconder
+        } else {
+            // esconde
             texto.style.display = "none";
             botao.textContent = "Continuar Saga";
 
-            // trava botoes proximos
+            // trava próximos
             for (let i = indice + 1; i < botoes.length; i++) {
                 botoes[i].disabled = true;
-                botoes[i].nextElementSibling.style.display = "none";
+
+                const prox = botoes[i].nextElementSibling;
+                if (prox) prox.style.display = "none";
+
                 botoes[i].textContent = "Continuar Saga";
             }
         }
