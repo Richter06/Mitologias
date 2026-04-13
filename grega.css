@@ -280,7 +280,7 @@ main>h2 {
 
   max-width: 1000px;
   margin: 22px auto 28px auto;
-  overflow: hidden;
+  overflow: visible;
 
   border: 10px solid #c8a96a;
   border-radius: 20px;
@@ -345,7 +345,8 @@ main>h2 {
 }
 
 .tabuletas .imagem img:hover {
-  transform: scale(1.05);
+  transform: rotate(5deg) scale(1.05); 
+  
 
 
 
@@ -354,9 +355,6 @@ main>h2 {
   filter: brightness(1.05) saturate(1.1);
 }
 
-.tabuletas .imagem img:hover {
-  transform: scale(1.05);
-}
 
 .tabuletas:nth-of-type(even) {
   flex-direction: row-reverse;
