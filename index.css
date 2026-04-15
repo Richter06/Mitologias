@@ -28,7 +28,7 @@ body {
 }
 
 .linha {
-    flex: 1; 
+    flex: 1;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -41,8 +41,10 @@ body {
 }
 
 .track img {
-    height: 80%; /* ocupa quase toda a linha */
-    max-height: 250px; /* limite pra não ficar absurdo */
+    height: 80%;
+    /* ocupa quase toda a linha */
+    max-height: 250px;
+    /* limite pra não ficar absurdo */
     border-radius: 15px;
     object-fit: cover;
 }
@@ -56,13 +58,23 @@ body {
 }
 
 @keyframes scrollLeft {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 @keyframes scrollRight {
-    from { transform: translateX(-50%); }
-    to { transform: translateX(0); }
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 /* Container central */
@@ -96,7 +108,7 @@ h1 {
 /* Menu */
 .menu {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
 }
 
@@ -173,6 +185,7 @@ h1 {
     background: linear-gradient(90deg, #c25903, #cc7503);
     color: rgb(255, 255, 255);
 }
+
 /* Botões desativados */
 #egipcia.desativado {
     opacity: 0.5;
@@ -181,9 +194,38 @@ h1 {
 }
 
 /* Responsivo */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .menu {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
+        height: 20%;
+        width: auto;
     }
+
+
+    main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        /* 🔥 controla o tamanho real */
+        padding: 20px;
+        /* 🔥 diminui o “tamanho visual” */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .sub {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .menu a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+   
 }

@@ -367,7 +367,7 @@ main>h2 {
 .tabuletas .texto,
 .tabuletas .imagem {
   width: 50%;
-  min-height: 420px;
+  min-height: auto;
   margin: 0;
   max-width: none;
   box-sizing: border-box;
@@ -464,36 +464,72 @@ main>h2 {
   }
 }
 
-@media (max-width: 600px) {
-  body {
-    padding-top: 130px;
-  }
+@media (max-width: 768px) {
 
+  /* 🔒 Protege NAV */
   .topnav {
-    gap: 12px;
-    padding: 14px 12px Ascendência;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 20%;
   }
 
+
+  @media (max-width: 768px) {
   .topnav a {
-    font-size: 0.82rem;
-    padding: 7px 10px;
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+  /* 🔒 Protege HEADER / H1 */
+  .cabeca {
+    flex-direction: column;
+    padding: 10px;
   }
 
-  .caixa-marmore {
-    padding: 18px 14px;
+  .caixa-marmore h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
   }
 
-  .texto {
-    padding: 20px 18px Ascendência;
+  /* 🔥 TABULETAS (única coisa que muda layout) */
+  section .tabuletas {
+    flex-direction: column;
   }
 
-  .tabuletas .texto,
-  .tabuletas .imagem {
-    padding: 18px;
+  section .tabuletas .texto,
+  section .tabuletas .imagem {
+    width: 100%;
+    min-height: auto;
   }
 
-  #resumo p,
-  .texto p {
-    font-size: 0.98rem;
+  /* 🔄 remove alternância no mobile */
+  section .tabuletas:nth-of-type(even) {
+    flex-direction: column;
+  }
+
+  /* 🖼️ imagem ajustada */
+  .tabuletas .imagem img {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    object-fit: cover;
+  }
+
+  /* 📦 padding menor */
+  .tabuletas .texto {
+    padding: 16px;
+  }
+
+  /* ✨ texto mais compacto */
+  .tabuletas .texto p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ❌ remove barra lateral que quebra layout */
+  .tabuletas::before {
+    display: none;
   }
 }

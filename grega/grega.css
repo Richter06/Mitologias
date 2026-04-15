@@ -392,36 +392,65 @@ main>h2 {
   }
 }
 
-@media (max-width: 600px) {
-  body {
-    padding-top: 130px;
-  }
+@media (max-width: 768px) {
 
-  .topnav {
-    gap: 12px;
-    padding: 14px 12px;
+
+.topnav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 20%;
   }
 
   .topnav a {
-    font-size: 0.82rem;
-    padding: 7px 10px;
+    font-size: 0.8rem;
+    padding: 6px 10px;
   }
 
-  .caixa-marmore {
-    padding: 18px 14px;
-  }
 
-  .texto {
-    padding: 20px 18px;
+  /* 🔥 só muda as tabuletas */
+  .tabuletas {
+    flex-direction: column;
   }
 
   .tabuletas .texto,
   .tabuletas .imagem {
-    padding: 18px;
+    width: 100%;
   }
 
-  #resumo p,
-  .texto p {
-    font-size: 0.98rem;
+  /* 🔄 garante ordem: texto em cima, imagem embaixo */
+  .tabuletas .texto {
+    order: 1;
+  }
+
+  .tabuletas .imagem {
+    order: 2;
+  }
+
+  /* ❌ remove inversão no mobile */
+  .tabuletas:nth-of-type(even) {
+    flex-direction: column;
+  }
+
+  /* 🖼️ imagem ajustada */
+  .tabuletas .imagem img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  /* 📦 melhora espaçamento */
+  .tabuletas {
+    gap: 12px;
+  }
+
+  .tabuletas .texto {
+    padding: 16px;
+  }
+
+  /* ❌ remove barra lateral que quebra layout */
+  .tabuletas::before {
+    display: none;
   }
 }
