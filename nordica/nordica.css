@@ -444,6 +444,54 @@ main>h2 {
 }
 
 
+.carta {
+    display: inline-block;
+    perspective: 1000px;
+}
+
+.carta-inner {
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.carta.virada .carta-inner {
+    transform: rotateY(180deg);
+}
+
+.carta-frente,
+.carta-verso {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.carta-verso {
+    background: linear-gradient(135deg, #6a5b3d, #b8860b);
+    border: 2px solid rgb(0, 255, 191);
+}
+
+.carta-verso {
+    background-image: url("templates_nordica/tri-carta.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.carta-frente {
+    transform: rotateY(180deg);
+}
+
+.carta-frente img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+}
+
+
+
 /* RESPONSIVO */
 @media (max-width: 900px) {
   .tabuletas {
