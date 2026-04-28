@@ -1,0 +1,3 @@
+--Alterar os ALTs das IMGs
+--Fazer alterações visuais necessarias
+--Revisar detalhes no código não visiviel pro cliente (valores de classes, ALTs, etc)
