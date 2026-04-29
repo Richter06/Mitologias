@@ -9,7 +9,7 @@ Atualmente o site conta com 3 universos mitológicos:
 - Mitologia Egípcia
 
 
-```md
+
 ## Mitologia Grega
 ![Grecia](siteGrego.jpeg)
 
@@ -18,7 +18,7 @@ Atualmente o site conta com 3 universos mitológicos:
 
 ## Mitologia Egípcia
 ![Egipcia](img/egipcia.png)
-```
+
 
 
 
