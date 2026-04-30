@@ -118,10 +118,12 @@ h1 {
     text-decoration: none;
     padding: 15px 30px;
     border: 2px solid #d4af37;
+    border-radius: 10px;
     color: #d4af37;
     font-weight: bold;
     letter-spacing: 1px;
     position: relative;
+    
 
     transition: 0.3s ease;
 }
@@ -130,6 +132,7 @@ h1 {
     text-decoration: none;
     padding: 15px 30px;
     border: 2px solid #17d4b4;
+    border-radius: 10px;
     color: #00f5a0;
     font-weight: bold;
     letter-spacing: 1px;
