@@ -1,3 +1,18 @@
+:root {
+  --bg-dark: #080202;
+  --panel-dark: rgba(18, 2, 2, 0.90);
+  --panel-red: rgba(75, 6, 6, 0.92);
+  --red-deep: #3b0000;
+  --red-main: #b10000;
+  --red-bright: #d11a1a;
+  --gold-dark: #8c5a00;
+  --gold-main: #d4a017;
+  --gold-bright: #ffd700;
+  --gold-soft: #f1d27a;
+  --text-light: #f7e8c7;
+  --text-gold: #e6b84e;
+}
+
 /* RESET */
 * {
   margin: 0;
@@ -12,12 +27,14 @@ html {
 /* FUNDO GERAL */
 body {
   min-height: 100vh;
-  background-image: url(templates_grega/marmore.png);
+  background:
+    linear-gradient(rgba(10, 0, 0, 0.55), rgba(10, 0, 0, 0.55)),
+    url(templates_egipcia/dunas.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #2f2414;
+  color: var(--text-light);
   font-family: Georgia, serif;
   padding-top: 110px;
 }
@@ -36,17 +53,17 @@ body {
   flex-wrap: wrap;
 
   padding: 18px 20px;
-  background: rgba(255, 248, 235, 0.92);
+  background: rgba(0, 0, 0, 0.88);
   backdrop-filter: blur(10px);
 
-  border-bottom: 1px solid rgba(212, 160, 23, 0.35);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.75);
+  box-shadow: 0 8px 24px rgba(177, 0, 0, 0.55);
 }
 
 .topnav a {
   font-family: Cinzel, serif;
   text-decoration: none;
-  color: #8c5a00;
+  color: var(--gold-soft);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -57,7 +74,7 @@ body {
 }
 
 .topnav a:hover {
-  background: linear-gradient(90deg, #3e2a00, #d4a017, #ffd700);
+  background: linear-gradient(90deg, var(--red-deep), var(--red-bright), var(--gold-bright));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -78,10 +95,10 @@ body {
 .caixa-marmore {
   width: min(900px, 92%);
   padding: 24px 20px;
-  background: rgba(255, 248, 235, 0.78);
-  border: 1px solid rgba(212, 160, 23, 0.35);
+  background: var(--panel-dark);
+  border: 1px solid rgba(212, 29, 23, 0.35);
   border-radius: 18px;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 14px 30px rgba(177, 0, 0, 0.45);
   backdrop-filter: blur(6px);
 }
 
@@ -91,13 +108,15 @@ body {
   font-size: clamp(2rem, 4vw, 3.6rem);
 
   background: linear-gradient(90deg,
-      #3e2a00,
-      #8c5a00,
+      #3b0000,
+      #a80202,
+      #d11a1a,
       #d4a017,
-      #ffae00,
+      #ffd700,
       #d4a017,
-      #8c5a00,
-      #3e2a00);
+      #b22222,
+      #ac0404,
+      #3b0000);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -105,8 +124,8 @@ body {
 
   animation: brilho 3s linear infinite;
   text-shadow:
-    0 0 5px rgba(255, 174, 0, 0.25),
-    0 0 15px rgba(255, 174, 0, 0.15);
+    0 0 5px rgba(255, 0, 0, 0.25),
+    0 0 15px rgba(255, 174, 0, 0.45);
 }
 
 @keyframes brilho {
@@ -122,7 +141,7 @@ body {
 hr {
   border: none;
   height: 2px;
-  background: linear-gradient(to right, transparent, #ffd700, transparent);
+  background: linear-gradient(to right, transparent, var(--red-bright), var(--gold-main), transparent);
   margin: 18px 0;
 }
 
@@ -132,17 +151,17 @@ hr {
   margin: 30px auto;
   padding: 30px;
 
-  background: rgba(255, 250, 242, 0.92);
+  background: var(--panel-dark);
   border: 1px solid rgba(212, 160, 23, 0.25);
   border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
   text-align: center;
 }
 
 #resumo p {
   font-size: 18px;
   line-height: 1.8;
-  color: #3b2d1c;
+  color: var(--gold-soft);
   margin: 25px auto;
   max-width: 860px;
 }
@@ -158,13 +177,11 @@ hr {
   transform: scale(1.03);
 }
 
-.zeus {
+.horus {
   width: 220px;
   display: inline-block;
   margin: 0 auto;
   border: 3px solid transparent;
-  background: linear-gradient(white, white) padding-box,
-    linear-gradient(45deg, #d4af37, #ffd700) border-box;
   border-radius: 50%;
   padding: 5px;
 }
@@ -178,10 +195,10 @@ main {
 main>h2 {
   text-align: center;
   font-family: Cinzel, serif;
-  color: #5f3c00;
+  color: var(--gold-bright);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
   margin-bottom: 30px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
 }
 
 /* SEÇÕES */
@@ -190,15 +207,15 @@ main>h2 {
   margin: 40px auto;
   padding: 30px 24px;
 
-  background: rgba(255, 250, 242, 0.80);
+  background: var(--panel-dark);
   border: 1px solid rgba(212, 160, 23, 0.22);
   border-radius: 22px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .caps h3 {
   font-family: Cinzel, serif;
-  color: #6b4300;
+  color: var(--red-bright);
   font-size: clamp(1.5rem, 2.3vw, 2rem);
   text-align: center;
   margin-bottom: 24px;
@@ -212,16 +229,16 @@ main>h2 {
   margin: 0 auto 18px auto;
   padding: 24px 26px;
 
-  background: linear-gradient(180deg, rgba(255, 248, 232, 0.98), rgba(243, 229, 193, 0.95));
-  border: 1px solid rgba(150, 111, 40, 0.18);
+  background: linear-gradient(180deg, rgba(55, 3, 3, 0.98), rgba(28, 2, 2, 0.96));
+  border: 1px solid rgba(212, 160, 23, 0.18);
   border-radius: 18px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
 }
 
 .texto h4 {
   font-family: Cinzel, serif;
   font-size: 1.25rem;
-  color: #5a3900;
+  color: var(--gold-bright);
   margin-bottom: 12px;
   text-align: center;
 }
@@ -229,7 +246,7 @@ main>h2 {
 .texto p {
   font-size: 1.02rem;
   line-height: 1.8;
-  color: #3d2f1a;
+  color: var(--text-light);
   text-align: justify;
 }
 
@@ -239,41 +256,35 @@ main>h2 {
   margin: 18px auto 22px auto;
   padding: 12px 24px;
 
-  border: 1px solid #c48a12;
+  border: 1px solid var(--gold-main);
   border-radius: 999px;
-  background: linear-gradient(180deg, #fff7e3, #e6c46f);
-  color: #5a3900;
+  background: linear-gradient(180deg, var(--red-bright), var(--red-deep));
+  color: var(--gold-bright);
 
   font-family: Cinzel, serif;
   font-weight: 700;
   letter-spacing: 0.04em;
 
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .continuar:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
-  background: linear-gradient(180deg, #fffaf0, #f0d88e);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+  background: linear-gradient(180deg, var(--gold-main), var(--red-bright));
 }
 
 .continuar:disabled {
-     background: linear-gradient(180deg, #f8f8f7, #c4c3c1);
-    color: #ffffff;
-    cursor: not-allowed;
-    opacity: 0.7;
+  background: linear-gradient(180deg, #6c1a1a, #2a0505);
+  color: #b6a27a;
+  cursor: not-allowed;
+  opacity: 0.75;
 }
 
-#caos {
-  display: flex;
-}
-
-#humanidade {
-  display: flex;
-}
-
+#caos,
+#humanidade,
 #surgimento {
   display: flex;
 }
@@ -289,16 +300,16 @@ main>h2 {
   margin: 22px auto 28px auto;
   overflow: visible;
 
-  border: 10px solid #c8a96a;
+  border: 10px solid var(--gold-dark);
   border-radius: 20px;
-  background: #e6d3a3;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(180deg, #3a0606, #250303);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.20);
 }
 
 .tabuletas::before {
   content: "";
   width: 8px;
-  background: linear-gradient(180deg, #b08b4f, #8a6632);
+  background: linear-gradient(180deg, var(--gold-main), var(--red-bright));
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.18);
   flex: 0 0 8px;
 }
@@ -317,23 +328,23 @@ main>h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(180deg, #e9d9b3, #d8c79a);
+  background: linear-gradient(180deg, #4a0707, #260303);
 }
 
 .tabuletas .texto h4 {
   margin-bottom: 14px;
-  color: #4f3516;
+  color: var(--gold-bright);
 }
 
 .tabuletas .texto p {
-  color: #3f2f1d;
+  color: var(--text-light);
   font-size: 1.02rem;
   line-height: 1.75;
 }
 
 .tabuletas .imagem {
   padding: 18px;
-  background: linear-gradient(180deg, #dfc88f, #cfb277);
+  background: linear-gradient(180deg, #3a0505, #1f0202);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,23 +356,16 @@ main>h2 {
   object-fit: cover;
   display: block;
   border-radius: 10px;
-  border: 2px solid rgba(122, 88, 32, 0.22);
+  border: 2px solid rgba(212, 160, 23, 0.30);
   box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.18);
   transition: all 0.3s ease;
-  border-radius: 10px;
 }
 
 .tabuletas .imagem img:hover {
-  transform: rotate(5deg) scale(1.05); 
-  
-
-
-
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.3);
-
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 30px rgba(177, 0, 0, 0.35);
   filter: brightness(1.05) saturate(1.1);
 }
-
 
 .tabuletas:nth-of-type(even) {
   flex-direction: row-reverse;
@@ -373,51 +377,47 @@ main>h2 {
 }
 
 .carta {
-    display: inline-block;
-    perspective: 1000px;
+  display: inline-block;
+  perspective: 1000px;
 }
 
 .carta-inner {
-    position: relative;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 .carta.virada .carta-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .carta-frente,
 .carta-verso {
-    position: absolute;
-    inset: 0;
-    backface-visibility: hidden;
-    border-radius: 12px;
-    overflow: hidden;
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .carta-verso {
-    background: linear-gradient(135deg, #6a5b3d, #b8860b);
-    border: 2px solid gold;
-}
-
-.carta-verso {
-    background-image: url("templates_egipcia/grega-carta-copy.png");
-    background-size: cover;
-    background-position: center;
+  background: linear-gradient(135deg, #4a0808, #b8860b);
+  border: 2px solid gold;
+  background-image: url("templates_egipcia/ankh-carta.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .carta-frente {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .carta-frente img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
 }
-
 
 /* RESPONSIVO */
 @media (max-width: 900px) {
@@ -447,9 +447,7 @@ main>h2 {
 }
 
 @media (max-width: 768px) {
-
-
-.topnav {
+  .topnav {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -461,8 +459,6 @@ main>h2 {
     padding: 4px 8px;
   }
 
-
-  /* 🔥 só muda as tabuletas */
   .tabuletas {
     flex-direction: column;
   }
@@ -472,7 +468,6 @@ main>h2 {
     width: 100%;
   }
 
-  /* 🔄 garante ordem: texto em cima, imagem embaixo */
   .tabuletas .texto {
     order: 1;
   }
@@ -481,12 +476,10 @@ main>h2 {
     order: 2;
   }
 
-  /* ❌ remove inversão no mobile */
   .tabuletas:nth-of-type(even) {
     flex-direction: column;
   }
 
-  /* 🖼️ imagem ajustada */
   .tabuletas .imagem img {
     width: 100%;
     height: auto;
@@ -494,7 +487,6 @@ main>h2 {
     object-fit: cover;
   }
 
-  /* 📦 melhora espaçamento */
   .tabuletas {
     gap: 12px;
   }
@@ -503,7 +495,6 @@ main>h2 {
     padding: 16px;
   }
 
-  /* ❌ remove barra lateral que quebra layout */
   .tabuletas::before {
     display: none;
   }

@@ -42,19 +42,19 @@ body {
 
 .track img {
     height: 80%;
-    /* ocupa quase toda a linha */
+
     max-height: 250px;
-    /* limite pra não ficar absurdo */
+
     border-radius: 15px;
     object-fit: cover;
 }
 
 .esquerda .track {
-    animation: scrollLeft 70s linear infinite;
+    animation: scrollLeft 90s linear infinite;
 }
 
 .direita .track {
-    animation: scrollRight 70s linear infinite;
+    animation: scrollRight 90s linear infinite;
 }
 
 @keyframes scrollLeft {
@@ -77,7 +77,7 @@ body {
     }
 }
 
-/* Container central */
+
 main {
     border-radius: 10px;
     background-color: #000202ec;
@@ -86,7 +86,7 @@ main {
 }
 
 
-/* Título */
+
 h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -97,7 +97,7 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
-/* Subtítulo */
+
 .sub {
     font-family: cinzel, serif;
     font-size: 1.2rem;
@@ -105,7 +105,7 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* Menu */
+
 .menu {
     display: flex;
     flex-direction: row;
@@ -113,7 +113,7 @@ h1 {
 }
 
 
-/* Botões */
+
 #grega {
     text-decoration: none;
     padding: 15px 30px;
@@ -144,12 +144,12 @@ h1 {
 #egipcia {
     text-decoration: none;
     padding: 15px 30px;
-    border: 2px solid #000202;
-    color: #f70404;
+    border: 2px solid #d4a017; 
+    border-radius: 10px;
+    color: #d11a1a;
     font-weight: bold;
     letter-spacing: 1px;
     position: relative;
-
     transition: 0.3s ease;
 }
 
@@ -159,7 +159,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Hover*/
+
 #grega:hover {
     background: linear-gradient(90deg, #d4af37, #ffd700);
     color: white;
@@ -167,12 +167,12 @@ h1 {
 }
 
 #egipcia:hover {
-    background: linear-gradient(90deg, #000202, #021104);
-    color: white;
-    transform: scale(1.05);
+    background: linear-gradient(90deg, #3b0000, #d11a1a);
+    color: #ffd700;
 }
 
-/* Botão ativo (grega) */
+
+
 #grega.ativo {
     background: linear-gradient(90deg, #d4af37, #ffd700);
     color: white;
@@ -185,16 +185,13 @@ h1 {
 
 
 #egipcia.ativo {
-    background: linear-gradient(90deg, #c25903, #cc7503);
-    color: rgb(255, 255, 255);
+    background: linear-gradient(90deg, #3b0000, #b10000);
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    color: #ffd700;
 }
 
-/* Botões desativados */
-#egipcia.desativado {
-    opacity: 0.5;
-    cursor: not-allowed;
-    border-style: dashed;
-}
+
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -211,9 +208,9 @@ h1 {
         flex-direction: column;
         width: 100%;
         max-width: 400px;
-        /* 🔥 controla o tamanho real */
+        
         padding: 20px;
-        /* 🔥 diminui o “tamanho visual” */
+        
     }
 
     h1 {

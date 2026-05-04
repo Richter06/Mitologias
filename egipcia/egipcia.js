@@ -1,6 +1,6 @@
 const secoes = document.querySelectorAll(".caps");
-const somFlip = new Audio("templates_grega/carta-flip.mp3");
-const somBack = new Audio("templates_grega/carta-unflip.mp3");
+const somFlip = new Audio("templates_egipcia/carta-flip.mp3");
+const somBack = new Audio("templates_egipcia/carta-unflip.mp3");
 
 /* BOTÕES */
 secoes.forEach(secao => {

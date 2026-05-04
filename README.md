@@ -17,7 +17,7 @@ Atualmente o site conta com 3 universos mitológicos:
 ![Nordica](siteNordico.jpeg)
 
 ## Mitologia Egípcia
-![Egipcia](img/egipcia.png)
+![Egipcia](siteEgipcio.jpeg)
 
 
 
